@@ -8,11 +8,11 @@ def product_validation():
         name = input("Enter product name: ").strip()
 
         if not name:
-            print("\nEmpty name! Please enter a string")
+            print("Empty name! Please enter a string\n")
         elif name.replace(" ", "").isalpha():
             correct_name = 1
         else:
-            print("\nPlease enter only letters!")
+            print("Please enter only letters!\n")
 
     return name
 
@@ -25,16 +25,16 @@ def price_validation():
         price = input("Enter price: ").strip()
 
         if not price:
-            print("\nEmpty price! Please enter a number")
+            print("Empty price! Please enter a number\n")
         else:
             try:
                 price = float(price)
                 if price <= 0:
-                    print("\nPrice must be greater than 0!")
+                    print("Price must be greater than 0!\n")
                 else:
                     correct_price = 1
             except ValueError:
-                print("\nPlease enter only numbers!")
+                print("Please enter only numbers!\n")
 
     return price
 
@@ -47,15 +47,15 @@ def quantity_validation():
         quantity = input("Enter quantity: ").strip()
 
         if not quantity:
-            print("\nEmpty quantity! Please enter a number")
+            print("Empty quantity! Please enter a number\n")
         else:
             try:
                 quantity = int(quantity)
                 if quantity <= 0:
-                    print("Quantity must be greater than 0!")
+                    print("Quantity must be greater than 0!\n")
                 else:
                     correct_quantity = 1
             except:
-                print("\nPlease enter only integers!")
+                print("Please enter only integers!\n")
 
     return quantity

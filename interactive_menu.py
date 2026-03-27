@@ -5,11 +5,6 @@ from update_product import update
 from delete_product import delete
 from display_statistics import calculations
 
-inventory = [
-    {"name" : "Coffee", "price" : float(4200), "quantity" : 2},
-    {"name" : "Apple", "price" : float(12500), "quantity" : 1}
-]
-
 def menu(inventory):
 
     end_menu = 0
@@ -72,15 +67,20 @@ def menu(inventory):
                 print(f"Total product units: {total_quantity:,}")
                 print(f"Most expensive product: {max_pricep} | Price: $ {max_price:,}")
                 print(f"Highest stock product: {max_quantityp} | Quantity: {max_quantity}")
+
+        elif option == "7":
+            print("THIS FUNCTION WILL BE ADDED IN THE FUTURE!")
+
+        elif option == "8":
+            print("THIS FUNCTION WILL BE ADDED IN THE FUTURE!")
         
         elif option == "9":
             end_menu = 1
-            print("THANKS FOR USING OUR SERVICES!\n")
 
         else:
             print("PLEASE ENTER A VALID VALUE!")
 
-menu(inventory)
+    return"THANKS FOR USING OUR SERVICES!\n"
 
 
 
