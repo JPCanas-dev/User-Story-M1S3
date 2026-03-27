@@ -5,6 +5,9 @@ from update_product import update
 from delete_product import delete
 from display_statistics import calculations
 
+from save_csv_file import save_csv
+from load_csv_file import load_csv
+
 def menu(inventory):
 
     end_menu = 0
@@ -25,16 +28,19 @@ def menu(inventory):
         print()
 
         if option == "1":
+
             add_message = new_product(inventory)
             print(add_message)
 
         elif option == "2":
+
             if not inventory:
                 print("INVENTORY IS EMPTY!")
             else:
                 show_inventory(inventory)
 
         elif option == "3":
+
             if not inventory:
                 print("\nINVENTORY IS EMPTY!")
             else:
@@ -46,12 +52,14 @@ def menu(inventory):
                     print(f"Product: {found['name']} | Price: $ {found['price']} | Quantity: {found['quantity']}")
 
         elif option == "4":
+
             if not inventory:
                 print("\nINVENTORY IS EMPTY!")
             else:
                 update(inventory)
 
         elif option == "5":
+
             if not inventory:
                 print("\nINVENTORY IS EMPTY!")
             else:
@@ -69,10 +77,18 @@ def menu(inventory):
                 print(f"Highest stock product: {max_quantityp} | Quantity: {max_quantity}")
 
         elif option == "7":
-            print("THIS FUNCTION WILL BE ADDED IN THE FUTURE!")
+
+            if not inventory:
+                print("\nINVENTORY IS EMPTY!")
+            else:
+                save_csv(inventory)
 
         elif option == "8":
-            print("THIS FUNCTION WILL BE ADDED IN THE FUTURE!")
+
+            if not inventory:
+                print("\nINVENTORY IS EMPTY!")
+            else:           
+                inventory = load_csv()
         
         elif option == "9":
             end_menu = 1
