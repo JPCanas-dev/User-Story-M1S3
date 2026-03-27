@@ -1,6 +1,9 @@
 from add_product import new_product
 from display_inventory import show_inventory
 from search_product import find_product
+from update_product import update
+from delete_product import delete
+from display_statistics import calculations
 
 inventory = [
     {"name" : "Coffee", "price" : float(4200), "quantity" : 2},
@@ -14,10 +17,10 @@ def menu(inventory):
     while end_menu == 0:
 
         print("\n1. Add product")
-        print("2. Search product")
-        print("3. Update product")
-        print("4. Delete product")
-        print("5. Display inventory")
+        print("2. Display inventory")
+        print("3. Search product")
+        print("4. Update product")
+        print("5. Delete product")
         print("6. Display statistics")
         print("7. Save CSV")
         print("8. Load CSV")
@@ -27,24 +30,56 @@ def menu(inventory):
         print()
 
         if option == "1":
-            success_add = new_product(inventory)
-            print(success_add)
+            add_message = new_product(inventory)
+            print(add_message)
 
         elif option == "2":
-
-            foundp = find_product(inventory)
-            if foundp == None:
-                print("\nPRODUCT DOESN'T EXIST!")
+            if not inventory:
+                print("INVENTORY IS EMPTY!")
             else:
-                print("\nFOUND PRODUCT:")
-                print(f"Product: {foundp['name']} | Price: $ {foundp['price']} | Quantity: {foundp['quantity']}")
+                show_inventory(inventory)
 
-        elif option = "3":
+        elif option == "3":
+            if not inventory:
+                print("\nINVENTORY IS EMPTY!")
+            else:
+                found = find_product(inventory)
+                if found == None:
+                    print("\nPRODUCT DOESN'T EXIST!")
+                else:
+                    print("\nFOUND PRODUCT:")
+                    print(f"Product: {found['name']} | Price: $ {found['price']} | Quantity: {found['quantity']}")
+
+        elif option == "4":
+            if not inventory:
+                print("\nINVENTORY IS EMPTY!")
+            else:
+                update(inventory)
 
         elif option == "5":
-            show_inventory(inventory)
-
+            if not inventory:
+                print("\nINVENTORY IS EMPTY!")
+            else:
+                delete(inventory)
+        
+        elif option == "6":
             
+            if not inventory:
+                print("\nINVENTORY IS EMPTY!")
+            else:
+                total_revenue, total_quantity, max_price, max_pricep, max_quantity, max_quantityp = calculations(inventory)
+                print(f"Total revenue: $ {total_revenue:,}")
+                print(f"Total product units: {total_quantity:,}")
+                print(f"Most expensive product: {max_pricep} | Price: $ {max_price:,}")
+                print(f"Highest stock product: {max_quantityp} | Quantity: {max_quantity}")
+        
+        elif option == "9":
+            end_menu = 1
+            print("THANKS FOR USING OUR SERVICES!\n")
+
+        else:
+            print("PLEASE ENTER A VALID VALUE!")
+
 menu(inventory)
 
 
