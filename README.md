@@ -1,6 +1,6 @@
 ## J-PRODUCT SUPERMARKET INVENTORY SYSTEM Version M1S3
 
-### Description
+### ✅ Description
 
 This project implements an Inventory Management System for a supermarket.
 
@@ -8,11 +8,11 @@ It allows users to add products, display inventory, search items, update or dele
 
 The system is console-based and designed to work without external databases, using Python data structures such as lists and dictionaries.
 
-### Flow diagram
+### ✅ Flow diagram
 
 ![Flow diagram of M1S3](Flow-diagram-M1S3.png)
 
-### System architecture
+### ✅ System architecture
 
 The system follows a modular structure, where each Python file is responsible for a specific functionality:
 
@@ -38,7 +38,7 @@ The system follows a modular structure, where each Python file is responsible fo
 
 + load_csv_file.py: Loads inventory data from a CSV file with validation and merge/replace options.
 
-### Instructions for running the program
+### ✅ Instructions for running the program
 
 Make sure Python is installed on your computer.
 Open the project folder in VS Code or any editor.
@@ -59,7 +59,7 @@ Navigate the menu using the following options:
     8: Load CSV
     9: Exit
 
-### Data structures used
+### ✅ Data structures used
 
 #### Inventory Structure (List of Dictionaries)
 
@@ -86,7 +86,7 @@ The system uses CSV files to:
 + Load external data (load_csv)<br>
 + Validate structure (header, rows, data types)
 
-### Description of the implement modules
+### ✅ Description of the implement modules
 
 **add_product.py:**
 
