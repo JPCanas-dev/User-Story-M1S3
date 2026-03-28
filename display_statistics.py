@@ -1,5 +1,5 @@
 
-def calculations(inventory):
+def statistics(inventory):
 
     total_revenue = 0
     total_quantity = 0

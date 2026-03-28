@@ -15,7 +15,7 @@ def new_product (inventory):
 
     inventory.append(product_added)
 
-    return"\nPRODUCT SUCCESSFULLY ADDED!"
+    return"\nPRODUCT ADDED SUCCESSFULLY!"
 
 
 

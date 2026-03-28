@@ -1,7 +1,7 @@
 from input_validations import product_validation
 
-def find_product(inventory):
-
+def search(inventory):
+    
     what_product = product_validation()
 
     for product in inventory:
